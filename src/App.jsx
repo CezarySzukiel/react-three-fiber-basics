@@ -5,11 +5,11 @@ import { OrbitControls, MeshWobbleMaterial, MeshDistortMaterial, useCursor, useH
 import { DirectionalLightHelper } from "three"
 import { useControls } from "leva"
 
+import { SierpinskiCube1, SierpinskiCube2 } from "./components/sierpinskiCube.jsx"
 
 
 const Cube = ({ position, size, color}) => {
   const ref = useRef()
-
 
   const [isHovered, setIsHovered] = useState(false)
   const [isClicked, setIsClicked] = useState(false)
@@ -58,13 +58,16 @@ const Scene = () => {
   return (
     <>
       <directionalLight 
-        position={[0, 0, 4]} 
+        position={[5, -2, 4]} 
         intensity={lightIntensity} 
         ref={directionalLighrRef}
         color={lightColor}
 
       />
-      <ambientLight intensity={0.3} />
+      <directionalLight 
+        position={[-5, 8, -8]} 
+      />
+      <ambientLight intensity={0.9} />
 
        {/* <group position={[0, 0, 0]}>
           <Cube position={[1, 0, 0]} color={"red"} size={[1, 1, 1]} />
@@ -76,19 +79,20 @@ const Scene = () => {
           <Cube position={[1, 2, 0]} color={"yellow"} size={[1, 1, 1]} />
         </group>  */}
 
-      <Cube position={[0, 0, 0]} color={"red"} size={[1, 1, 1.5]} />
+      {/*<Cube position={[0, 0, 0]} color={"red"} size={[1, 1, 1.5]} />*/}
+      <SierpinskiCube2 color={"green"} position={[0, 0, 0]}/>
 
       <OrbitControls />
     </>
   )
 }
 
+
 const App = () => {
   return (
     <Canvas>
       <Scene />
     </Canvas>
-     
   )
 }
 
