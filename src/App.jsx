@@ -7,9 +7,12 @@ import { KeyboardControls } from "@react-three/drei";
 import Cube from "./components/cube/cube.jsx";
 import CubeScene from "./components/cube/scene.jsx";
 import SierpinskiCubeScene from "./components/sierpinskiCube/scene.jsx";
+
 import PhysicsScene from "./components/physicsBasic/scene.jsx";
 import { GameScene } from "./components/3DGame/Scene.jsx";
 import { generateGameLevel } from "./store";
+
+import { RapierPhysicScene } from "./components/rapierPhysics/scene.jsx";
 
 export const Controls = {
   forward: "forward",
@@ -38,7 +41,9 @@ const App = () => {
       {/*<SierpinskiCubeScene />*/}
       {/*<PhysicsScene />*/}
 
-      <GameScene />
+      {/*<GameScene />*/}
+
+      <RapierPhysicScene />
   
     </Canvas>
     </KeyboardControls>

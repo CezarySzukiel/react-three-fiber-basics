@@ -12,8 +12,8 @@ function PhysicsScene() {
 	 useInterval(() => {
     	const newPosX = (Math.random() - 0.5) * 10;
     	const newPosZ = (Math.random() - 0.5) * 10; 
-    	const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-    	setSpheres(prevSpheres => [...prevSpheres, {position: [newPosX, 15, newPosZ], color: randomColor}]);
+    	// const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    	setSpheres(prevSpheres => [...prevSpheres, {position: [newPosX, 15, newPosZ], color: "blue"}]);
   	}, 100);
 
 	return (
@@ -27,9 +27,9 @@ function PhysicsScene() {
 				{/*<Box />*/}
 				{/*<Cylinder />*/}
 				{/*<Sphere />*/}
-				{/*{spheres.map(({ position, color }, index) => (
+				{spheres.map(({ position, color }, index) => (
        				<Sphere key={index} position={position} color={color} />
-      			))}*/}
+      			))}
 			</Physics>
 		</>
 	)
